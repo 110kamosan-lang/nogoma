@@ -705,14 +705,12 @@ SMARTPHONE
 /* =========================================================
    HILL
 ========================================================= */
+
 .hill-svg {
     position: absolute;
     bottom: -1px;
-    left: 50%;
-    width: 100vw !important;
-    max-width: none !important;
-    height: auto;
-    transform: translateX(-50%);
+    left: 0;
+    width: 100%;
     z-index: 80;
     pointer-events: none;
 }
@@ -4547,24 +4545,3 @@ svg {
         font-weight: 400;
     }
 }
-
-@media (max-width: 768px) {
-
-    .hero {
-        width: 100vw !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-    }
-
-    .hill-svg {
-        position: absolute !important;
-        left: 50% !important;
-        bottom: -1px !important;
-        width: 100vw !important;
-        max-width: none !important;
-        height: auto !important;
-        transform: translateX(-50%) !important;
-    }
-
-}
-
