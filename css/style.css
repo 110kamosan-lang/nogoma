@@ -705,12 +705,13 @@ SMARTPHONE
 /* =========================================================
    HILL
 ========================================================= */
-
 .hill-svg {
     position: absolute;
     bottom: -1px;
-    left: 0;
-    width: 100%;
+    left: 50%;
+    width: 100vw;
+    max-width: none;
+    transform: translateX(-50%);
     z-index: 80;
     pointer-events: none;
 }
