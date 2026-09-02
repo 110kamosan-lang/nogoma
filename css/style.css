@@ -4547,3 +4547,24 @@ svg {
         font-weight: 400;
     }
 }
+
+@media (max-width: 768px) {
+
+    .hero {
+        width: 100vw !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .hill-svg {
+        position: absolute !important;
+        left: 50% !important;
+        bottom: -1px !important;
+        width: 100vw !important;
+        max-width: none !important;
+        height: auto !important;
+        transform: translateX(-50%) !important;
+    }
+
+}
+
