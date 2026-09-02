@@ -1,0 +1,4547 @@
+/* =========================================================
+   BASE
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    max-width: 100%;
+    font-family: 'Kiwi Maru', serif;
+    background: #fffef7;
+    color: #355b2f;
+    overflow-x: hidden;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+section {
+    padding: 100px 5%;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    z-index: 9999;
+    background: #fff9d9;
+    box-shadow: 0 4px 16px rgba(70, 75, 35, .06);
+}
+
+.header-inner {
+    width: 100%;
+    max-width: 1700px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 0 28px 0 46px;
+    gap: 34px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    height: 100%;
+    text-decoration: none;
+    transition: transform .25s ease;
+}
+
+.logo-link:hover {
+    transform: translateY(-3px);
+}
+
+/* =========================================================
+LOGO
+========================================================= */
+
+.logo-area {
+    flex: 0 0 clamp(360px, 34vw, 500px);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    text-decoration: none;
+    transition: transform .25s ease;
+}
+
+.logo-link:hover {
+    transform: translateY(-3px);
+}
+
+.logo-link picture {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    width: clamp(300px, 27vw, 430px);
+    height: auto;
+    max-height: 68px;
+    display: block;
+    object-fit: contain;
+}
+
+/* =========================================================
+SMARTPHONE
+768px 以下
+========================================================= */
+
+@media (max-width: 768px) {
+
+     .site-header {
+        height: 0;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .header-inner {
+        height: auto;
+        padding: 0;
+        display: block;
+    }
+
+    /* -------------------------
+   スマホロゴ
+------------------------- */
+
+    .logo-area {
+        position: fixed;
+        top: 14px;
+        left: 16px;
+
+        width: 92px;
+        height: 92px;
+
+        z-index: 10001;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        flex: none;
+    }
+
+    .logo-link {
+        width: 92px;
+        height: 92px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo-link picture {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo-image {
+        width: 72px;
+        height: 72px;
+
+        max-width: 72px;
+        max-height: 72px;
+
+        object-fit: contain;
+    }
+
+    /* -------------------------
+   ハンバーガー
+------------------------- */
+
+    .hamburger {
+        display: flex;
+
+        position: fixed;
+        top: 14px;
+        right: 16px;
+
+        width: 58px;
+        height: 58px;
+
+        z-index: 10002;
+
+        padding: 0;
+        border: none;
+        border-radius: 16px;
+
+        background: #fff9d9;
+
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        gap: 6px;
+
+        cursor: pointer;
+
+        box-shadow:
+            0 5px 18px rgba(70, 75, 35, .12);
+    }
+
+    .hamburger span {
+        display: block;
+
+        width: 25px;
+        height: 3px;
+
+        border-radius: 999px;
+
+        background: #355b2f;
+
+        transition:
+            transform .3s ease,
+            opacity .3s ease;
+    }
+
+    /* ハンバーガー → × */
+
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    
+}
+
+
+
+/* =========================================================
+   PC NAVIGATION
+========================================================= */
+
+.main-nav {
+    position: static;
+    flex: 1 1 auto;
+    min-width: 0;
+    width: auto;
+    height: 100%;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.main-nav ul {
+    width: 100%;
+    max-width: 1050px;
+    height: 100%;
+
+    margin: 0 auto;
+    padding: 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, minmax(0, 1fr));
+
+    align-items: center;
+
+    gap: 8px;
+
+    list-style: none;
+}
+
+.main-nav li {
+    min-width: 0;
+}
+
+.main-nav a {
+    width: 100%;
+    height: 82px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 2px;
+
+    padding: 0;
+
+    color: #355b2f;
+
+    font-family: 'Kiwi Maru', serif;
+
+    font-size: 14px;
+
+    line-height: 1.1;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transition:
+        color .3s ease,
+        transform .3s ease;
+}
+
+.main-nav a:hover {
+    color: #355b2f;
+    transform: translateY(-5px);
+}
+
+
+/* ナビアイコン */
+.main-nav a img {
+    width: 44px;
+    height: 48px;
+
+    flex: 0 0 48px;
+
+    object-fit: contain;
+
+    display: block;
+
+    transform: translateY(0);
+
+    transition:
+        transform .3s ease,
+        filter .3s ease;
+}
+
+
+/* 個別アイコンサイズ */
+
+.main-nav li:nth-child(3) a img {
+    width: 40px;
+}
+
+.main-nav li:nth-child(4) a img {
+    width: 50px;
+}
+
+.main-nav li:nth-child(6) a img {
+    width: 48px;
+}
+
+
+/* アイコンホバー */
+
+.main-nav a:hover img {
+    animation: navIconCute .7s ease;
+    filter: drop-shadow(
+        0 6px 5px rgba(70, 75, 35, .14)
+    );
+}
+
+
+/* アイコン跳ねるアニメーション */
+
+@keyframes navIconCute {
+
+    0% {
+        transform:
+            translateY(5px)
+            rotate(0deg)
+            scale(1);
+    }
+
+    30% {
+        transform:
+            translateY(-5px)
+            rotate(-3deg)
+            scale(1.05);
+    }
+
+    60% {
+        transform:
+            translateY(-2px)
+            rotate(3deg)
+            scale(1.04);
+    }
+
+    80% {
+        transform:
+            translateY(-4px)
+            rotate(-2deg)
+            scale(1.03);
+    }
+
+    100% {
+        transform:
+            translateY(5px)
+            rotate(0deg)
+            scale(1);
+    }
+}
+
+
+/* =========================================================
+   HAMBURGER
+========================================================= */
+
+.hamburger {
+    display: none;
+}
+
+
+/* =========================================================
+   PC
+   769px ～ 1200px
+========================================================= */
+
+@media (max-width: 1200px) and (min-width: 769px) {
+
+    .site-header {
+        height: 90px;
+    }
+
+    .header-inner {
+        padding: 0 18px 0 26px;
+        gap: 20px;
+    }
+
+    .logo-area {
+        flex-basis: 37%;
+    }
+
+    .logo-link {
+        gap: 14px;
+    }
+
+    .logo-mark,
+    .logo-svg {
+        width: 82px;
+        height: 82px;
+        flex-basis: 82px;
+    }
+
+    .logo-kicker {
+        font-size: 14px;
+    }
+
+    .logo-name {
+        font-size: 34px;
+    }
+
+    .main-nav a {
+        height: 88px;
+        font-size: 11px;
+    }
+
+    .main-nav a img {
+        width: 36px;
+        height: 45px;
+        flex-basis: 45px;
+    }
+}
+
+
+/* =========================================================
+   TOP / HERO
+========================================================= */
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    padding: 0;
+}
+
+
+/* =========================================================
+   SLIDER
+========================================================= */
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   SLIDES
+   2枚の写真を重ねる
+========================================================= */
+.slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* =========================================================
+   ふわっと切り替わるスライド
+========================================================= */
+
+.slide {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+
+    transition: opacity 2s ease-in-out;
+
+    pointer-events: none;
+}
+
+
+/* 表示中 */
+
+.slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+/* =========================================================
+   SLIDE IMAGE
+========================================================= */
+
+.slide img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 140%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+
+/* PC画像 */
+
+.pc-img {
+    display: block;
+    top: -245px !important;
+}
+
+
+/* SP画像 */
+
+.sp-img {
+    display: none;
+}
+
+
+
+
+/* =========================================================
+   HERO TEXT
+========================================================= */
+
+.hero-text {
+    position: absolute;
+    left: 8%;
+    top: 65%;
+    transform: translateY(-50%);
+    z-index: 100;
+    color: white;
+    width: 40%;
+}
+
+.hero-text h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1.7;
+    margin-bottom: 25px;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, .25);
+}
+
+
+/* =========================================================
+   HERO DECORATION
+========================================================= */
+
+.deco {
+    position: absolute;
+    z-index: 120;
+}
+
+
+/* =========================================================
+   BIRD ANIMATION
+========================================================= */
+
+.birdanime {
+    position: absolute;
+    width: 88px;
+    height: 88px;
+    top: 25%;
+    right: 7%;
+    z-index: 120;
+    animation: float 4s ease-in-out infinite;
+}
+
+.bird-body {
+    position: absolute;
+    width: 100px;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.wing-right {
+    position: absolute;
+    width: 57px;
+    top: 4px;
+    right: -7px;
+    z-index: 2;
+    transform-origin: left center;
+    animation: flap2 1s ease-in-out infinite;
+}
+
+@keyframes flap2 {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(25deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+
+/* =========================================================
+   FLOWER / LEAF
+========================================================= */
+
+.flower {
+    width: 95px;
+    bottom: 20px;
+    left: 80%;
+    animation: sway 5s ease-in-out infinite;
+}
+
+.leaf {
+    width: 95px;
+    top: 55%;
+    right: 5%;
+    animation: sway 4s ease-in-out infinite;
+}
+
+@keyframes sway {
+
+    0% {
+        transform: rotate(-4deg);
+    }
+
+    50% {
+        transform: rotate(15deg);
+    }
+
+    100% {
+        transform: rotate(-4deg);
+    }
+}
+
+@keyframes float {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   HILL
+========================================================= */
+
+.hill-svg {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    z-index: 80;
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   NEWS
+========================================================= */
+
+.news {
+    background: #f7f4e8;
+    padding: 120px 5%;
+}
+
+.news-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.news-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 48px;
+    color: #4d6538;
+    font-weight: normal;
+}
+
+.bird-icon {
+    width: 75px;
+    animation: birdFloat 3s ease-in-out infinite;
+}
+
+.title-plant {
+    width: 45px;
+}
+
+
+/* NEWS CARD */
+
+.news-card {
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .08);
+    position: relative;
+}
+
+.news-image {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+.news-text {
+    text-align: left;
+}
+
+.news-text h3 {
+    font-size: 26px;
+    color: #556f3f;
+    margin-bottom: 15px;
+}
+
+.news-text p {
+    line-height: 2;
+    color: #666;
+}
+
+
+/* =========================================================
+   NEWS LIST
+========================================================= */
+
+.news-list {
+    max-width: 1000px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(77, 101, 56, .25);
+}
+
+.news-item {
+    min-height: 82px;
+    display: grid;
+    grid-template-columns: 180px 1fr 28px;
+    align-items: center;
+    gap: 24px;
+    padding: 0 12px;
+    border-bottom: 1px solid rgba(77, 101, 56, .25);
+    color: #4d6538;
+    text-decoration: none;
+    font-family: 'Kiwi Maru', serif;
+    transition:
+        background .25s ease,
+        padding .25s ease;
+}
+
+.news-item:hover {
+    background: #fff;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.news-item time {
+    font-size: 14px;
+    color: #82906e;
+}
+
+.news-item-title {
+    font-size: 18px;
+}
+
+.news-arrow {
+    font-size: 22px;
+    text-align: right;
+    transition: transform .25s ease;
+}
+
+.news-item:hover .news-arrow {
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   NEWS DETAIL
+========================================================= */
+
+.news-detail-page {
+    min-height: 75vh;
+    padding: 190px 6% 100px;
+    background: #fffef7;
+}
+
+.news-detail-wrap {
+    max-width: 850px;
+    margin: 0 auto;
+    color: #425b39;
+    font-family: 'Kiwi Maru', serif;
+}
+
+.news-detail-date {
+    color: #879475;
+    margin-bottom: 14px;
+}
+
+.news-detail-wrap h1 {
+    margin: 0;
+    font-size: clamp(30px, 4vw, 50px);
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.news-detail-line {
+    width: 70px;
+    height: 3px;
+    margin: 30px 0 42px;
+    background: #8aaa70;
+    border-radius: 999px;
+}
+
+.news-detail-wrap > p:not(.news-detail-date) {
+    line-height: 2.3;
+    font-size: 17px;
+}
+
+.news-back {
+    display: inline-block;
+    margin-top: 45px;
+    color: #5e9c3d;
+    text-decoration: none;
+    border-bottom: 1px solid #8aaa70;
+    padding-bottom: 5px;
+}
+
+
+/* =========================================================
+   GOODS
+========================================================= */
+
+.goods {
+    overflow: visible;
+    padding: 120px 0;
+    
+}
+
+.goods-title {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 25px;
+    margin-bottom: 60px;
+    color: #5d7446;
+}
+
+.title-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 52px;
+    font-weight: normal;
+    letter-spacing: 2px;
+}
+
+.title-line {
+    width: 140px;
+    height: 24px;
+    margin-top: 10px;
+    background: url("../image/line.png") center center / contain no-repeat;
+}
+
+.goods-icon {
+    width: 70px;
+    height: auto;
+    object-fit: contain;
+}
+
+.left-icon {
+    transform: translateY(10px);
+}
+
+.right-icon {
+    transform: translateY(5px);
+}
+
+
+/* =========================================================
+   GOODS SLIDER
+========================================================= */
+
+.goods-slider {
+    width: 100%;
+    overflow: visible;
+}
+
+.goods-track {
+    display: flex;
+    gap: 30px;
+    width: max-content;
+    animation: goodsLoop 40s linear infinite;
+}
+
+.goods-track a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.goods-item {
+    width: 280px;
+    flex-shrink: 0;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .12);
+    transition: .4s;
+    position: relative;
+    z-index: 1;
+}
+
+.goods-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, .18);
+    z-index: 100;
+}
+
+.goods-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* 商品情報
+   GOODS一覧ページと同じカード基準に統一 */
+
+.goods-info {
+    background: white;
+    text-align: center;
+    padding: 15px;
+    min-height: 82px;
+}
+
+.goods-name {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #4a3c31;
+    margin-bottom: 6px;
+}
+
+.goods-price {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #4a3c31;
+}
+
+
+/* =========================================================
+   GOODS BUTTON
+========================================================= */
+
+.goods-btn-wrap {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.goods-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    padding: 14px 30px;
+    background: #f7f2e8;
+    border: 1px solid #b9ac96;
+    border-radius: 999px;
+    text-decoration: none;
+    color: #5a5247;
+    font-size: 18px;
+    transition: .3s;
+}
+
+.goods-btn:hover {
+    background: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
+}
+
+.arrow {
+    font-size: 18px;
+    transition: .3s;
+}
+
+.goods-btn:hover .arrow {
+    transform: translateX(5px);
+}
+
+.btn-bird {
+    width: 60px;
+    transition: .3s;
+}
+
+.goods-btn:hover .btn-bird {
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   GOODS LOOP
+========================================================= */
+
+@keyframes goodsLoop {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-50% - 15px));
+    }
+}
+
+
+/* =========================================================
+   CONTACT FORM
+========================================================= */
+
+form {
+    max-width: 700px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input,
+textarea {
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+}
+
+button {
+    padding: 15px;
+    border: none;
+    background: #5e9c3d;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   SHOP INFO
+========================================================= */
+
+.shop-info {
+    background: #fffef7;
+    padding: 120px 5%;
+}
+
+.shop-container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.shop-photo {
+    flex: 1;
+    position: relative;
+}
+
+.shop-photo img:first-child {
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .15);
+}
+
+.shop-text {
+    flex: 1;
+}
+
+.shop-text h2 {
+    font-size: 40px;
+    margin-bottom: 30px;
+    color: #5e9c3d;
+}
+
+.shop-text p {
+    line-height: 2;
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   SHOP FLOAT ICON
+========================================================= */
+
+.float-icon {
+    position: absolute;
+    width: 80px;
+    animation: yurayura 4s ease-in-out infinite;
+}
+
+.icon1 {
+    top: -20px;
+    left: -30px;
+}
+
+.icon2 {
+    bottom: -20px;
+    right: -20px;
+    animation-delay: 1s;
+}
+
+.icon3 {
+    top: 3%;
+    right: -75px;
+    animation-delay: 2s;
+}
+
+@keyframes yurayura {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-15px)
+            rotate(5deg);
+    }
+
+    100% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+}
+
+
+/* =========================================================
+   TOP BUTTON
+========================================================= */
+
+.top-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 9999;
+
+    display: block;
+
+    /* 最初は非表示 */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    /* 下に少しずらしておく */
+    transform: translateY(15px);
+
+    transition:
+        opacity .4s ease,
+        transform .4s ease,
+        visibility .4s ease;
+}
+
+
+/* 表示された状態 */
+
+.top-btn.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform: translateY(0);
+}
+
+
+/* ボタン画像 */
+
+.top-btn img {
+    width: 100px;
+    height: 100px;
+    display: block;
+
+    transition:
+        transform .35s ease,
+        filter .35s ease;
+}
+
+
+/* ホバー */
+
+.top-btn:hover img {
+    transform:
+        translateY(-10px) rotate(-3deg) scale(1.04);
+
+    filter: drop-shadow(0 7px 5px rgba(70, 75, 35, .15));
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    background: #5e9c3d;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+footer ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   PRODUCT GRID
+========================================================= */
+
+.product-grid {
+    max-width: 1220px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 280px));
+    justify-content: center;
+    gap: 28px;
+    padding: 0;
+}
+
+.product-card {
+    position: relative;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #355b2f;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
+    transition: .3s;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .15);
+}
+
+.product-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.product-info {
+    padding: 15px;
+    min-height: 82px;
+    text-align: center;
+}
+
+.product-name {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 6px;
+}
+
+.product-price {
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: bold;
+    color: #7a5a3a;
+}
+
+
+/* =========================================================
+   FAVORITE BUTTON
+========================================================= */
+
+.favorite-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .15);
+    z-index: 10;
+    transition: .3s;
+}
+
+.favorite-btn.active {
+    color: #ff6b8a;
+    transform: scale(1.15);
+}
+
+
+/* =========================================================
+   PRODUCT DETAIL
+========================================================= */
+
+.product-detail {
+    padding: 150px 5% 100px;
+}
+
+.detail-wrap {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.detail-image {
+    flex: 1;
+}
+
+.detail-image img {
+    border-radius: 20px;
+}
+
+.detail-info {
+    flex: 1;
+}
+
+.detail-info h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.price {
+    font-size: 32px;
+    color: #7a5a3a;
+    margin-bottom: 30px;
+}
+
+.description {
+    line-height: 2;
+    margin-bottom: 40px;
+}
+
+.cart-btn {
+    background: #5e9c3d;
+    color: white;
+    border: none;
+    padding: 18px 50px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   SHOP INTRO
+========================================================= */
+
+.shop-intro {
+    padding: 120px 5%;
+    background: #fffef7;
+}
+
+.intro-wrap {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 70px;
+}
+
+.intro-photo {
+    flex: 1;
+}
+.intro-text {
+    flex: 1;
+
+    color: #425b39;
+
+    font-family: 'Kiwi Maru', serif;
+}
+
+.intro-text p {
+
+    margin: 0 0 22px;
+
+    color: #425b39;
+
+    font-family: 'Kiwi Maru', serif;
+
+    font-size: 16px;
+
+    line-height: 2.1;
+
+}
+
+/* =========================================================
+   OUR STORY TITLE
+========================================================= */
+
+.title-center {
+    margin: 0 0 28px;
+
+    color: #4d6538;
+
+    font-family: 'Kiwi Maru', serif;
+
+    font-size: clamp(32px, 3.5vw, 48px);
+
+    font-weight: 400;
+
+    letter-spacing: .06em;
+
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   MAP
+========================================================= */
+
+.map-section {
+    padding: 120px 5%;
+    background: #f7f4e8;
+}
+
+.map-wrap {
+    max-width: 1200px;
+    margin: 50px auto 0;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .12);
+}
+
+.map-wrap iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+}
+
+iframe {
+    display: block;
+}
+
+.shop-info .bird-icon,
+.map-section .bird-icon {
+    width: 60px;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-section {
+    padding: 120px 6%;
+    background: #fffce9;
+}
+
+.about-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.about-heading img {
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+}
+
+.about-heading h2 {
+    margin: 0;
+    color: #4d6538;
+    font-family: 'Kiwi Maru', serif;
+    font-size: clamp(38px, 4vw, 54px);
+    font-weight: 400;
+    letter-spacing: .06em;
+}
+
+.about-wrap {
+    max-width: 1220px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(45px, 7vw, 110px);
+    align-items: center;
+}
+
+.about-visual {
+    text-align: center;
+}
+
+.about-visual img {
+    width: min(100%, 590px);
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+.about-copy {
+    color: #425b39;
+    font-family: 'Kiwi Maru', serif;
+    line-height: 2.1;
+    font-size: 16px;
+}
+
+.about-brand {
+    margin: 0 0 25px;
+    font-size: 42px;
+    letter-spacing: .16em;
+    color: #5a7547;
+}
+
+.about-copy p {
+    margin: 0 0 22px;
+}
+
+.about-copy .about-last {
+    margin-top: 30px;
+}
+
+.about-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+    padding: 11px 22px;
+    border: 1px solid #78935f;
+    border-radius: 999px;
+    color: #557044;
+    text-decoration: none;
+    transition: .25s ease;
+}
+
+.about-more:hover {
+    background: #f2f0d9;
+    transform: translateY(-2px);
+}
+
+.about-more span {
+    transition: transform .25s ease;
+}
+
+.about-more:hover span {
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   CONCEPT
+========================================================= */
+
+.concept {
+    padding: 120px 5%;
+    background: #fffce9;
+}
+
+.concept-title {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 70px;
+    color: #5d7446;
+}
+
+.concept-box {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.concept-item {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
+}
+
+.concept-item img {
+    width: 80px;
+    margin: 0 auto 20px;
+}
+
+.concept-item h4 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #5d7446;
+}
+
+.concept-item p {
+    line-height: 2;
+}
+
+
+/* =========================================================
+   CONTACT PAGE
+========================================================= */
+
+.contact-page {
+    padding: 150px 5% 120px;
+    background: #fffef7;
+}
+
+.contact-wrap {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.contact-text {
+    flex: 1;
+}
+
+.contact-text h3 {
+    font-size: 36px;
+    color: #5d7446;
+    margin-bottom: 25px;
+}
+
+.contact-text p {
+    line-height: 2.2;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 18px;
+    border: 1px solid #d8d1bf;
+    border-radius: 15px;
+    background: #fff;
+    font-family: 'Kiwi Maru', serif;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    background: #5e9c3d;
+    color: white;
+    border: none;
+    padding: 18px;
+    border-radius: 50px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.contact-form button:hover {
+    background: #4d8331;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   SMARTPHONE
+   768px以下
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 0;
+        background: transparent;
+        box-shadow: none;
+        z-index: 9999;
+        pointer-events: none;
+    }
+
+    .header-inner {
+        width: 100%;
+        height: 0;
+        padding: 0;
+        display: block;
+    }
+
+
+    /* -----------------------------------------------------
+       スマホロゴ
+    ----------------------------------------------------- */
+
+    .logo-area {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 105px;
+        height: 92px;
+        padding: 10px 14px;
+        background: #fff9d9;
+        border-radius: 0 0 36px 0;
+        box-shadow: 0 4px 12px rgba(70, 75, 35, .08);
+        z-index: 10000;
+        pointer-events: auto;
+    }
+
+    .logo-link {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo-mark {
+        width: 70px;
+        height: 70px;
+        flex: none;
+    }
+
+    .logo-svg {
+        width: 70px;
+        height: 70px;
+    }
+
+    .logo-copy {
+        display: none;
+    }
+
+
+    /* =====================================================
+       ハンバーガー
+    ===================================================== */
+
+    .hamburger {
+        position: fixed;
+        top: 14px;
+        right: 14px;
+        width: 50px;
+        height: 50px;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        border: none;
+        border-radius: 16px;
+        background: #fff;
+        box-shadow: 0 4px 14px rgba(70, 75, 35, .12);
+        cursor: pointer;
+        z-index: 10002;
+        pointer-events: auto;
+        appearance: none;
+    }
+
+    .hamburger span {
+        width: 26px;
+        height: 3px;
+        margin: 0;
+        padding: 0;
+        display: block;
+        border-radius: 999px;
+        background: #355b2f;
+        transition:
+            transform .25s ease,
+            opacity .2s ease;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+
+    /* =====================================================
+       スマホナビ
+    ===================================================== */
+
+    .main-nav {
+        position: fixed;
+        top: 12px;
+        right: 12px;
+        width: min(84vw, 370px);
+        height: calc(100vh - 24px);
+        padding: 82px 22px 24px;
+        display: block;
+        background: #fff9d9;
+        border-radius: 28px;
+        box-shadow: 0 8px 28px rgba(70, 75, 35, .14);
+
+        transform: translateX(calc(100% + 30px));
+
+        transition: transform .3s ease;
+
+        pointer-events: none;
+        z-index: 10001;
+        overflow-y: auto;
+    }
+
+    .main-nav.active {
+        transform: translateX(0);
+        pointer-events: auto;
+    }
+
+    .main-nav ul {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        list-style: none;
+    }
+
+    .main-nav li {
+        width: 100%;
+        height: auto;
+    }
+
+    .main-nav a {
+        width: 100%;
+        min-height: 36px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+        padding: 1px 12px;
+        color: #355b2f;
+        font-family: 'Kiwi Maru', serif;
+        font-size: 18px;
+        line-height: 1;
+        text-decoration: none;
+        border-radius: 14px;
+    }
+
+    .main-nav a:hover {
+        transform: none;
+        color: #355b2f;
+        background: rgba(255, 255, 255, .55);
+    }
+
+    .main-nav a img {
+        width: 32px;
+        height: 32px;
+        flex: 0 0 32px;
+        object-fit: contain;
+    }
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .hero {
+        height: 70vh;
+    }
+
+    .slider {
+        height: 70vh;
+    }
+
+    .pc-img {
+        display: none !important;
+    }
+
+    .sp-img {
+        display: block !important;
+        height: 100% !important;
+        object-fit: cover;
+        object-position: center top;
+    }
+
+    .hero-text {
+        width: 70%;
+        left: 10%;
+        top: 45%;
+    }
+
+    .hero-text h2 {
+        font-size: 2rem;
+    }
+
+    .hero-text p {
+        font-size: .9rem;
+    }
+
+    .birdanime {
+        width: 50px;
+        height: 50px;
+        top: 25%;
+        right: 10%;
+    }
+
+    .bird-body {
+        width: 65px;
+    }
+
+    .wing-right {
+        width: 35px;
+        top: 4px;
+        right: -8px;
+    }
+
+    .leaf {
+        right: 5%;
+        width: 55px;
+    }
+
+    .flower {
+        width: 60px;
+        bottom: 1px;
+    }
+
+    .dots {
+        bottom: 110px;
+    }
+
+    .dot {
+        width: 11px;
+        height: 11px;
+    }
+
+
+    /* =====================================================
+       NEWS
+    ===================================================== */
+
+    .news {
+        padding: 85px 6%;
+    }
+
+    .news-heading {
+        margin-bottom: 38px;
+    }
+
+    .news-title {
+        font-size: 36px;
+    }
+
+    .bird-icon {
+        width: 50px;
+    }
+
+    .news-item {
+        min-height: 76px;
+        grid-template-columns: 1fr 20px;
+        gap: 5px;
+        padding: 12px 4px;
+    }
+
+    .news-item time {
+        grid-column: 1;
+        font-size: 12px;
+    }
+
+    .news-item-title {
+        grid-column: 1;
+        font-size: 14px;
+    }
+
+    .news-arrow {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+    }
+
+
+    /* =====================================================
+       NEWS DETAIL
+    ===================================================== */
+
+    .news-detail-page {
+        padding: 135px 7% 70px;
+    }
+
+    .news-detail-wrap h1 {
+        font-size: 28px;
+    }
+
+    .news-detail-wrap > p:not(.news-detail-date) {
+        font-size: 15px;
+    }
+
+
+    /* =====================================================
+       GOODS
+    ===================================================== */
+
+    .goods {
+        padding: 100px 0;
+    }
+
+    .goods-title {
+        gap: 10px;
+    }
+
+    .title-center {
+        font-size: 34px;
+    }
+
+    .goods-icon {
+        width: 45px;
+    }
+
+    .title-line {
+        width: 90px;
+    }
+
+    .goods-item {
+        width: 180px;
+    }
+
+    .goods-item img {
+        height: 193px;
+    }
+
+    .goods-info {
+        min-height: 78px;
+        padding: 12px 10px;
+    }
+
+    .goods-name {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .goods-price {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .goods-track img {
+        width: 180px;
+    }
+
+
+    /* =====================================================
+       ABOUT
+    ===================================================== */
+
+    .about-section {
+        padding: 85px 6%;
+    }
+
+    .about-heading {
+        margin-bottom: 38px;
+    }
+
+    .about-heading img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .about-heading h2 {
+        font-size: 36px;
+    }
+
+    .about-wrap {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .about-visual img {
+        max-width: 430px;
+    }
+
+    .about-copy {
+        font-size: 14px;
+        line-height: 2;
+    }
+
+    .about-brand {
+        font-size: 34px;
+    }
+
+
+    /* =====================================================
+       SHOP
+    ===================================================== */
+
+    .shop-container {
+        flex-direction: column;
+    }
+
+    .shop-text {
+        text-align: center;
+    }
+
+    .shop-text h2 {
+        font-size: 32px;
+    }
+
+    .float-icon {
+        width: 55px;
+    }
+
+
+    /* =====================================================
+       SHOP INTRO
+    ===================================================== */
+
+    .intro-wrap {
+        flex-direction: column;
+    }
+
+    .intro-text h1 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+
+    /* =====================================================
+       CONCEPT
+    ===================================================== */
+
+    .concept-box {
+        grid-template-columns: 1fr;
+    }
+
+    .concept-title {
+        font-size: 30px;
+    }
+
+
+    /* =====================================================
+       CONTACT
+    ===================================================== */
+
+    .contact-wrap {
+        flex-direction: column;
+    }
+
+    .contact-text {
+        text-align: center;
+    }
+
+    .contact-text h3 {
+        font-size: 28px;
+    }
+
+
+    /* =====================================================
+       MAP
+    ===================================================== */
+
+    .map-wrap iframe {
+        height: 300px;
+    }
+
+    .shop-info .bird-icon,
+    .map-section .bird-icon {
+        width: 45px;
+    }
+
+
+    /* =====================================================
+       PRODUCT GRID
+    ===================================================== */
+
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+        padding: 0 6%;
+    }
+
+    .product-card img {
+        height: auto;
+        aspect-ratio: 1 / 1.07;
+        object-fit: cover;
+    }
+
+    .product-info {
+        min-height: 78px;
+        padding: 12px 10px;
+    }
+
+    .product-name {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .product-price {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+
+    /* =====================================================
+       PRODUCT DETAIL
+    ===================================================== */
+
+    .product-detail {
+        padding: 120px 5% 80px;
+    }
+
+    .detail-wrap {
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    .detail-info h1 {
+        font-size: 28px;
+    }
+
+    .price {
+        font-size: 24px;
+    }
+}
+
+/* =========================================================
+   BLOG TITLE
+========================================================= */
+.blog-title {
+
+    padding: 150px 6% 20px;
+
+    background: #fffef7;
+
+    text-align: center;
+
+}
+
+
+/* BLOGタイトル */
+
+.blog-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 16px;
+
+}
+
+
+/* diaryアイコン */
+
+.blog-heading img {
+
+    width: 58px;
+
+    height: 58px;
+
+    object-fit: contain;
+
+}
+
+
+/* BLOG */
+
+.blog-heading h1 {
+
+    margin: 0;
+
+    color: #4d6538;
+
+    font-family: 'Kiwi Maru', serif;
+
+    font-size: clamp(38px, 4vw, 54px);
+
+    font-weight: 400;
+
+    letter-spacing: .06em;
+
+}
+
+
+/* タイトル下の短い説明 */
+
+.blog-lead {
+
+    margin: 18px 0 0;
+
+    color: #697760;
+
+    font-family: 'Kiwi Maru', serif;
+
+    font-size: 15px;
+
+    line-height: 2;
+
+}
+
+
+
+/* =========================================================
+   BLOG SECTION
+========================================================= */
+.blog-section {
+
+    padding: 30px 6% 140px;
+
+    background: #fffef7;
+
+}
+
+
+.blog-container {
+
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+}
+
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.section-heading {
+
+    text-align: center;
+
+    margin-bottom: 65px;
+
+}
+
+
+.section-heading-en {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #8aa06f;
+
+    font-family: 'Kiwi Maru', serif;
+
+    font-size: 14px;
+
+    letter-spacing: .18em;
+
+}
+
+
+.section-heading h2 {
+
+    margin: 0;
+
+    color: #4d6538;
+
+    font-family: 'Kiwi Maru', serif;
+
+    font-size: clamp(28px, 3vw, 40px);
+
+    font-weight: 400;
+
+}
+
+
+.section-heading p {
+
+    margin: 18px 0 0;
+
+    color: #697760;
+
+    font-family: 'Kiwi Maru', serif;
+
+    font-size: 15px;
+
+    line-height: 2;
+
+}
+
+
+
+/* =========================================================
+   BLOG GRID
+========================================================= */
+
+.blog-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 55px 32px;
+
+}
+
+
+
+/* =========================================================
+   BLOG CARD
+========================================================= */
+.blog-card {
+
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, .08);
+
+    transition:
+        .3s;
+}
+
+
+.blog-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        0 15px 25px rgba(0, 0, 0, .15);
+}
+
+
+
+/* =========================================================
+   BLOG IMAGE
+========================================================= */
+
+.blog-image {
+
+    display: block;
+
+    width: 100%;
+
+    height: 255px;
+
+    overflow: hidden;
+
+}
+
+
+.blog-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform .5s ease;
+
+}
+
+
+
+
+/* =========================================================
+   BLOG BODY
+========================================================= */
+
+.blog-card-body {
+
+    padding: 25px 26px 28px;
+
+}
+
+
+.blog-meta {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 12px;
+
+    font-family: 'Kiwi Maru', serif;
+
+    font-size: 12px;
+
+}
+
+
+.blog-meta time {
+
+    color: #8a9780;
+
+}
+
+
+.blog-meta span {
+
+    padding: 4px 10px;
+
+    border-radius: 999px;
+
+    background: #eff5df;
+
+    color: #66804e;
+
+}
+
+
+
+/* =========================================================
+   BLOG TITLE
+========================================================= */
+
+.blog-card h3 {
+
+    margin: 0 0 15px;
+
+    color: #4d6538;
+
+    font-family: 'Kiwi Maru', serif;
+
+    font-size: 20px;
+
+    font-weight: 400;
+
+    line-height: 1.7;
+
+}
+
+
+
+/* =========================================================
+   BLOG TEXT
+========================================================= */
+
+.blog-card p {
+
+    margin: 0 0 20px;
+
+    color: #687361;
+
+    font-family: 'Kiwi Maru', serif;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+}
+
+
+
+/* =========================================================
+   BLOG MORE
+========================================================= */
+
+.blog-more {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: #5d7747;
+
+    font-family: 'Kiwi Maru', serif;
+
+    font-size: 14px;
+
+    text-decoration: none;
+
+}
+
+
+.blog-more span {
+
+    transition:
+        transform .25s ease;
+
+}
+
+
+.blog-more:hover span {
+
+    transform:
+        translateX(5px);
+
+}
+
+
+
+ /* =========================================================
+   FOOTER
+========================================================= */
+.site-footer {
+    width: 100%;
+    margin-top: 0;
+    background: #5e9c3d;
+    color: #fff;
+    font-family: 'Kiwi Maru', serif;
+}
+
+ /* =========================================================
+   FOOTER INNER
+========================================================= */
+
+ .footer-inner {
+
+     width: 100%;
+
+     max-width: 1500px;
+
+     margin: 0 auto;
+
+     padding: 55px 6% 45px;
+
+     display: flex;
+
+     align-items: center;
+
+     justify-content: space-between;
+
+     gap: 50px;
+ }
+
+
+ /* =========================================================
+   LOGO
+========================================================= */
+
+ .footer-brand {
+
+     flex: 0 0 auto;
+
+     display: flex;
+
+     flex-direction: column;
+
+     align-items: flex-start;
+ }
+
+
+ .footer-logo {
+
+     display: block;
+
+     transition:
+         transform .3s ease;
+ }
+
+
+ .footer-logo:hover {
+
+     transform:
+         translateY(-3px);
+ }
+
+
+ .footer-logo picture {
+
+     display: block;
+ }
+
+
+ .footer-logo img {
+
+     display: block;
+
+     width: 250px;
+
+     max-width: 100%;
+
+     height: auto;
+
+     filter: brightness(0) invert(1);
+ }
+
+
+ .footer-brand p {
+
+     margin: 12px 0 0;
+
+     font-size: 11px;
+
+     letter-spacing: .08em;
+
+     opacity: .85;
+ }
+
+
+ /* =========================================================
+   NAV
+========================================================= */
+
+ .footer-nav {
+
+     flex: 1;
+
+     display: flex;
+
+     justify-content: center;
+ }
+
+
+ .footer-nav ul {
+
+     margin: 0;
+
+     padding: 0;
+
+     list-style: none;
+
+     display: flex;
+
+     align-items: center;
+
+     justify-content: center;
+
+     flex-wrap: wrap;
+
+     gap: 8px 25px;
+ }
+
+
+ .footer-nav a {
+
+     position: relative;
+
+     display: inline-block;
+
+     padding: 5px 0;
+
+     color: #fff;
+
+     text-decoration: none;
+
+     font-size: 12px;
+
+     letter-spacing: .08em;
+
+     transition:
+         opacity .25s ease,
+         transform .25s ease;
+ }
+
+
+ .footer-nav a::after {
+
+     content: "";
+
+     position: absolute;
+
+     left: 0;
+
+     bottom: 0;
+
+     width: 0;
+
+     height: 1px;
+
+     background: #fff;
+
+     transition:
+         width .25s ease;
+ }
+
+
+ .footer-nav a:hover {
+
+     opacity: .8;
+
+     transform:
+         translateY(-2px);
+ }
+
+
+ .footer-nav a:hover::after {
+
+     width: 100%;
+ }
+
+
+ /* =========================================================
+   SNS
+========================================================= */
+
+ .footer-sns {
+
+     flex: 0 0 auto;
+ }
+
+
+ .footer-sns a {
+
+     display: flex;
+
+     align-items: center;
+
+     justify-content: center;
+
+     min-width: 100px;
+
+     height: 38px;
+
+     padding: 0 16px;
+
+     border:
+         1px solid rgba(255, 255, 255, .7);
+
+     border-radius: 999px;
+
+     color: #fff;
+
+     text-decoration: none;
+
+     font-size: 11px;
+
+     letter-spacing: .08em;
+
+     transition:
+         background .25s ease,
+         color .25s ease,
+         transform .25s ease;
+ }
+
+
+ .footer-sns a:hover {
+
+     background: #fff;
+
+     color: #5e9c3d;
+
+     transform:
+         translateY(-3px);
+ }
+
+
+ /* =========================================================
+   FOOTER BOTTOM
+========================================================= */
+
+ .footer-bottom {
+
+     width: 100%;
+
+     padding:
+         18px 6%;
+
+     border-top:
+         1px solid rgba(255, 255, 255, .2);
+
+     text-align: center;
+ }
+
+
+ .footer-bottom p {
+
+     margin: 0;
+
+     font-family:
+         Arial,
+         sans-serif;
+
+     font-size: 9px;
+
+     letter-spacing: .08em;
+
+     opacity: .75;
+ }
+
+
+ /* =========================================================
+   TABLET
+========================================================= */
+
+ @media (max-width: 1100px) {
+
+     .footer-inner {
+
+         gap: 30px;
+
+         padding-left: 4%;
+         padding-right: 4%;
+     }
+
+
+     .footer-logo img {
+
+         width: 210px;
+     }
+
+
+     .footer-nav ul {
+
+         gap: 6px 17px;
+     }
+
+
+     .footer-nav a {
+
+         font-size: 11px;
+     }
+
+ }
+
+
+ /* =========================================================
+   SMARTPHONE
+========================================================= */
+
+ @media (max-width: 768px) {
+
+     .site-footer {
+
+         margin-top: 0px;
+     }
+
+
+     .footer-inner {
+
+         padding:
+             45px 24px 35px;
+
+         display: flex;
+
+         flex-direction: column;
+
+         align-items: center;
+
+         justify-content: center;
+
+         gap: 28px;
+
+         text-align: center;
+     }
+
+
+     /* ロゴ */
+
+     .footer-brand {
+
+         align-items: center;
+     }
+
+
+     .footer-logo img {
+
+         width: 190px;
+
+         max-height: 65px;
+
+         object-fit: contain;
+     }
+
+
+     .footer-brand p {
+
+         margin-top: 8px;
+
+         font-size: 10px;
+     }
+
+
+     /* ナビ */
+
+     .footer-nav {
+
+         width: 100%;
+     }
+
+
+     .footer-nav ul {
+
+         width: 100%;
+
+         display: flex;
+
+         justify-content: center;
+
+         gap: 7px 18px;
+     }
+
+
+     .footer-nav a {
+
+         font-size: 10px;
+     }
+
+
+     /* SNS */
+
+     .footer-sns a {
+
+         min-width: 110px;
+
+         height: 36px;
+
+         font-size: 10px;
+     }
+
+
+     /* コピーライト */
+
+     .footer-bottom {
+
+         padding:
+             15px 20px;
+     }
+
+
+     .footer-bottom p {
+
+         font-size: 8px;
+     }
+
+ }
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .blog-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+}
+
+
+
+/* =========================================================
+   BLOG SMARTPHONE
+========================================================= */
+
+@media (max-width: 768px) {
+
+
+    /* -------------------------
+       BLOGタイトル
+    ------------------------- */
+
+    .blog-title {
+
+        padding: 120px 6% 25px;
+
+    }
+
+
+    /* diaryアイコン＋BLOG */
+
+    .blog-heading {
+
+        gap: 12px;
+
+    }
+
+
+    .blog-heading img {
+
+        width: 48px;
+
+        height: 48px;
+
+    }
+
+
+    .blog-heading h1 {
+
+        font-size: 38px;
+
+    }
+
+
+    /* タイトル下の文章 */
+
+    .blog-lead {
+
+        margin-top: 14px;
+
+        font-size: 14px;
+
+    }
+
+
+
+    /* -------------------------
+       ブログ一覧
+    ------------------------- */
+
+    .blog-section {
+
+        padding: 75px 6% 100px;
+
+    }
+
+
+    /* -------------------------
+       NOGOMA DIARY
+       小さなお店の日記
+    ------------------------- */
+
+    .section-heading {
+
+        margin-bottom: 45px;
+
+    }
+
+
+    .section-heading p {
+
+        font-size: 14px;
+
+    }
+
+
+    /* -------------------------
+       ブログカード
+    ------------------------- */
+
+    .blog-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+    }
+
+
+    /* -------------------------
+       写真
+    ------------------------- */
+
+    .blog-image {
+
+        height: 240px;
+
+    }
+
+
+    /* -------------------------
+       カード本文
+    ------------------------- */
+
+    .blog-card-body {
+
+        padding: 22px 22px 25px;
+
+    }
+
+
+    /* -------------------------
+       ブログタイトル
+    ------------------------- */
+
+    .blog-card h3 {
+
+        font-size: 18px;
+
+    }
+
+}
+
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.gallery-section {
+
+    padding: 120px 6% 140px;
+
+    background: #fffef7;
+
+    color: #355b2f;
+
+}
+
+
+/* =========================
+   タイトル
+========================= */
+
+.gallery-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 16px;
+
+    margin-bottom: 70px;
+
+}
+
+
+.gallery-heading img {
+
+    width: 52px;
+
+    height: 52px;
+
+    object-fit: contain;
+
+}
+
+
+.gallery-heading h2 {
+
+    margin: 0;
+
+    font-size: 42px;
+
+    letter-spacing: .08em;
+
+    font-weight: 500;
+
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.gallery-intro {
+
+    max-width: 720px;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+
+}
+
+
+.gallery-label {
+
+    margin-bottom: 15px;
+
+    font-size: 13px;
+
+    letter-spacing: .25em;
+
+    color: #6da544;
+
+}
+
+
+.gallery-intro h3 {
+
+    margin: 0 0 25px;
+
+    font-size: 30px;
+
+    line-height: 1.7;
+
+    font-weight: 500;
+
+}
+
+
+.gallery-intro p {
+
+    font-size: 15px;
+
+    line-height: 2.1;
+
+}
+
+
+/* =========================
+   動画
+========================= */
+
+.gallery-movie {
+
+    width: min(1100px, 100%);
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 15px 45px rgba(70, 75, 35, .12);
+
+    background: #e9eadf;
+
+}
+
+
+.gallery-movie video {
+
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    object-fit: cover;
+
+}
+
+
+/* =========================
+   動画キャプション
+========================= */
+
+.gallery-caption {
+
+    width: min(1100px, 100%);
+
+    margin: 25px auto 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+}
+
+
+.gallery-caption span {
+
+    font-size: 12px;
+
+    letter-spacing: .22em;
+
+    color: #6da544;
+
+}
+
+
+.gallery-caption p {
+
+    margin: 0;
+
+    font-size: 14px;
+
+    color: #64705b;
+
+}
+
+
+/* =========================
+   写真
+========================= */
+
+.gallery-grid {
+
+    width: min(1100px, 100%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.4fr 1fr 1fr;
+
+    gap: 20px;
+
+}
+
+
+.gallery-item {
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    background: #f1f1e8;
+
+}
+
+
+.gallery-item img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 280px;
+
+    object-fit: cover;
+
+    transition:
+        transform .7s ease;
+
+}
+
+
+.gallery-item-large img {
+
+    height: 580px;
+
+}
+
+
+.gallery-item:hover img {
+
+    transform: scale(1.04);
+
+}
+
+
+/* =========================
+   スマホ改行
+========================= */
+
+.sp-only {
+
+    display: none;
+
+}
+
+/* =========================================================
+   OPEN THE DOOR
+========================================================= */
+
+.open-door-section {
+
+    padding: 140px 6% 150px;
+
+    background: #f7f4e8;
+
+    color: #355b2f;
+
+}
+
+
+/* =========================
+   全体
+========================= */
+
+.open-door-inner {
+
+    width: min(1200px, 100%);
+
+    margin: 0 auto;
+
+}
+
+
+/* =========================
+   タイトル
+========================= */
+
+.open-door-heading {
+
+    text-align: center;
+
+    margin-bottom: 60px;
+
+}
+
+
+.open-door-label {
+
+    margin: 0 0 18px;
+
+    font-size: 13px;
+
+    letter-spacing: .28em;
+
+    color: #6da544;
+
+}
+
+
+.open-door-heading h2 {
+
+    margin: 0 0 28px;
+
+    font-size: 34px;
+
+    font-weight: 500;
+
+    letter-spacing: .08em;
+
+    line-height: 1.6;
+
+}
+
+
+.open-door-lead {
+
+    margin: 0;
+
+    font-size: 15px;
+
+    line-height: 2.2;
+
+    color: #64705b;
+
+}
+
+
+/* =========================
+   動画
+========================= */
+
+.open-door-movie {
+
+    width: min(1100px, 100%);
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    background: #e9eadf;
+
+    box-shadow:
+        0 18px 50px rgba(70, 75, 35, .12);
+
+}
+
+
+.open-door-movie video {
+
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    object-fit: cover;
+
+}
+
+
+/* =========================
+   動画下
+========================= */
+
+.open-door-caption {
+
+    width: min(1100px, 100%);
+
+    margin: 25px auto 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+}
+
+
+.open-door-caption span {
+
+    font-size: 11px;
+
+    letter-spacing: .25em;
+
+    color: #6da544;
+
+}
+
+
+.open-door-caption p {
+
+    margin: 0;
+
+    font-size: 13px;
+
+    color: #7a8171;
+
+}
+
+
+/* =========================================================
+   OPEN THE DOOR
+   スクロール表示
+========================================================= */
+
+.open-door-heading,
+.open-door-movie,
+.open-door-caption {
+
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+
+}
+
+
+.open-door-heading.is-visible,
+.open-door-movie.is-visible,
+.open-door-caption.is-visible {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+/* =========================================================
+   OPEN THE DOOR
+   SMARTPHONE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .open-door-section {
+
+        padding: 90px 5% 100px;
+
+    }
+
+
+    .open-door-heading {
+
+        margin-bottom: 40px;
+
+    }
+
+
+    .open-door-label {
+
+        font-size: 10px;
+
+        letter-spacing: .22em;
+
+        margin-bottom: 14px;
+
+    }
+
+
+    .open-door-heading h2 {
+
+        font-size: 24px;
+
+        line-height: 1.7;
+
+        margin-bottom: 20px;
+
+    }
+
+
+    .open-door-lead {
+
+        font-size: 13px;
+
+        line-height: 2;
+
+    }
+
+
+    .open-door-movie {
+
+        border-radius: 18px;
+
+    }
+
+
+    .open-door-movie video {
+
+        /*
+         * 今は16:9の動画しかないため、
+         * スマホでも16:9のまま表示
+         */
+
+        aspect-ratio: 16 / 9;
+
+        object-fit: cover;
+
+    }
+
+
+    .open-door-caption {
+
+        display: block;
+
+        margin-top: 18px;
+
+    }
+
+
+    .open-door-caption span {
+
+        display: block;
+
+        margin-bottom: 8px;
+
+        font-size: 10px;
+
+    }
+
+
+    .open-door-caption p {
+
+        font-size: 12px;
+
+        line-height: 1.7;
+
+    }
+
+}
+/* =========================================================
+   nogoma TYPOGRAPHY SYSTEM
+   全ページ共通の文字サイズ・行間を統一
+   2026-08-26
+========================================================= */
+
+:root {
+
+    --font-section: 48px;
+    --font-heading: 26px;
+    --font-body: 16px;
+    --font-small: 14px;
+    --font-button: 15px;
+
+    --line-section: 1.3;
+    --line-heading: 1.6;
+    --line-body: 2;
+    --line-small: 1.8;
+    --line-button: 1.5;
+
+    --tracking-section: .08em;
+    --tracking-heading: .04em;
+    --tracking-body: .02em;
+    --tracking-small: .03em;
+
+}
+
+/* =========================================================
+   COMMON SECTION TITLE
+========================================================= */
+
+.news-title,
+.about-heading h2,
+.goods-title .title-center,
+.shop-text h2 .title-center,
+.map-section .title-center {
+
+    font-size: var(--font-section);
+    line-height: var(--line-section);
+    font-weight: 400;
+    letter-spacing: var(--tracking-section);
+
+}
+
+/* =========================================================
+   COMMON SECTION TITLE ICON
+========================================================= */
+
+.news-title .bird-icon,
+.about-heading img,
+.goods-title .bird-icon,
+.shop-info .bird-icon,
+.map-section .bird-icon {
+
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+
+}
+
+/* =========================================================
+   COMMON BODY TEXT
+========================================================= */
+
+.about-copy,
+.shop-text p,
+.open-door-lead,
+.open-door-caption p {
+
+    font-size: var(--font-body);
+    line-height: var(--line-body);
+    letter-spacing: var(--tracking-body);
+
+}
+
+/* ABOUT paragraphs */
+
+.about-copy p {
+
+    font-size: var(--font-body);
+    line-height: var(--line-body);
+    letter-spacing: var(--tracking-body);
+
+}
+
+/* =========================================================
+   NEWS
+========================================================= */
+
+.news-item time {
+
+    font-size: var(--font-small);
+    line-height: var(--line-small);
+
+}
+
+.news-item-title {
+
+    font-size: var(--font-body);
+    line-height: var(--line-body);
+
+}
+
+/* =========================================================
+   GOODS
+========================================================= */
+
+.goods-name {
+
+    font-size: var(--font-body);
+    line-height: 1.7;
+
+}
+
+.goods-price {
+
+    font-size: var(--font-body);
+    line-height: 1.5;
+
+}
+
+/* =========================================================
+   ABOUT BRAND
+========================================================= */
+
+.about-brand {
+
+    font-size: 30px;
+    line-height: 1.4;
+    letter-spacing: .08em;
+
+}
+
+/* =========================================================
+   OPEN THE DOOR
+========================================================= */
+
+.open-door-label,
+.open-door-caption span {
+
+    font-size: var(--font-small);
+    line-height: var(--line-small);
+    letter-spacing: var(--tracking-small);
+
+}
+
+.open-door-heading h2 {
+
+    font-size: var(--font-heading);
+    line-height: var(--line-heading);
+    font-weight: 500;
+    letter-spacing: var(--tracking-heading);
+
+}
+
+/* =========================================================
+   SECTION TITLE SPACING
+========================================================= */
+
+.news-heading,
+.about-heading {
+
+    margin-bottom: 50px;
+
+}
+
+.goods-title {
+
+    margin-bottom: 50px;
+
+}
+
+.shop-text .goods-title {
+
+    margin-bottom: 35px;
+
+}
+
+.map-section .goods-title {
+
+    margin-bottom: 45px;
+
+}
+
+/* =========================================================
+   MOBILE TYPOGRAPHY
+========================================================= */
+
+@media (max-width: 768px) {
+
+    :root {
+
+        --font-section: 32px;
+        --font-heading: 21px;
+        --font-body: 14px;
+        --font-small: 12px;
+        --font-button: 13px;
+
+    }
+
+    .news-title,
+    .about-heading h2,
+    .goods-title .title-center,
+    .shop-text h2 .title-center,
+    .map-section .title-center {
+
+        font-size: var(--font-section);
+        line-height: var(--line-section);
+
+    }
+
+    .news-title .bird-icon,
+    .about-heading img,
+    .goods-title .bird-icon,
+    .shop-info .bird-icon,
+    .map-section .bird-icon {
+
+        width: 45px;
+        height: 45px;
+
+    }
+
+    .about-copy,
+    .about-copy p,
+    .shop-text p,
+    .open-door-lead,
+    .open-door-caption p {
+
+        font-size: var(--font-body);
+        line-height: var(--line-body);
+
+    }
+
+    .news-item time {
+
+        font-size: var(--font-small);
+        line-height: var(--line-small);
+
+    }
+
+    .news-item-title {
+
+        font-size: var(--font-body);
+        line-height: var(--line-body);
+
+    }
+
+    .goods-name {
+
+        font-size: var(--font-body);
+        line-height: 1.7;
+
+    }
+
+    .goods-price {
+
+        font-size: var(--font-body);
+        line-height: 1.5;
+
+    }
+
+    .about-brand {
+
+        font-size: 26px;
+        line-height: 1.4;
+
+    }
+
+    .open-door-label,
+    .open-door-caption span {
+
+        font-size: var(--font-small);
+        line-height: var(--line-small);
+
+    }
+
+    .open-door-heading h2 {
+
+        font-size: var(--font-heading);
+        line-height: var(--line-heading);
+
+    }
+
+    .news-heading,
+    .about-heading {
+
+        margin-bottom: 35px;
+
+    }
+
+    .goods-title {
+
+        margin-bottom: 35px;
+
+    }
+
+    .shop-text .goods-title {
+
+        margin-bottom: 28px;
+
+    }
+
+    .map-section .goods-title {
+
+        margin-bottom: 35px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE HORIZONTAL OVERFLOW SAFETY
+   ページ全体の横スクロール防止
+========================================================= */
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+
+    .goods-slider {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .gallery-movie,
+    .gallery-caption,
+    .gallery-grid,
+    .open-door-inner,
+    .open-door-movie,
+    .open-door-caption {
+        max-width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   nogoma FINISH
+   SECTION TITLE ALIGNMENT + MOBILE OVERFLOW SAFETY
+   2026-08-27
+========================================================= */
+
+/* -------------------------
+   セクションタイトルを横一直線に統一
+------------------------- */
+
+.news-title,
+.about-heading,
+.goods-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.news-title {
+    margin: 0;
+}
+
+.about-heading {
+    margin-bottom: 50px;
+}
+
+.goods-title {
+    margin-bottom: 50px;
+}
+
+.news-title .bird-icon,
+.about-heading img,
+.goods-title .bird-icon,
+.shop-info .bird-icon,
+.map-section .bird-icon {
+    width: 58px;
+    height: 58px;
+    flex: 0 0 58px;
+    object-fit: contain;
+}
+
+/* GOODS / ACCESS / MAP の文字部分 */
+.goods-title .title-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-size: var(--font-section);
+    line-height: var(--line-section);
+    font-weight: 400;
+    letter-spacing: var(--tracking-section);
+}
+
+/* -------------------------
+   横幅を超えないための基本設定
+------------------------- */
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img,
+video,
+svg {
+    max-width: 100%;
+}
+
+/* 商品スライダーは横に流すが、ページ自体は横へ広げない */
+.goods,
+.goods-slider {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.goods-track {
+    max-width: none;
+}
+
+/* 絶対配置の装飾はページ幅を押し広げない */
+.shop-container,
+.about-wrap,
+.news-list,
+.product-grid,
+.blog-grid,
+.gallery-grid,
+.open-door-inner,
+.open-door-movie,
+.open-door-caption {
+    min-width: 0;
+}
+
+/* -------------------------
+   スマホ
+------------------------- */
+
+@media (max-width: 768px) {
+
+    .news-title,
+    .about-heading,
+    .goods-title {
+        gap: 10px;
+    }
+
+    .news-title .bird-icon,
+    .about-heading img,
+    .goods-title .bird-icon,
+    .shop-info .bird-icon,
+    .map-section .bird-icon {
+        width: 45px;
+        height: 45px;
+        flex-basis: 45px;
+    }
+
+    .news-title,
+    .about-heading h2,
+    .goods-title .title-center {
+        font-size: var(--font-section);
+        line-height: var(--line-section);
+    }
+
+    .about-heading {
+        margin-bottom: 35px;
+    }
+
+    .goods-title {
+        margin-bottom: 35px;
+    }
+
+    .shop-text .goods-title {
+        margin-bottom: 28px;
+    }
+
+    .map-section .goods-title {
+        margin-bottom: 35px;
+    }
+
+    /* NEWS LIST の固定幅をスマホ幅に合わせる */
+    .news-list {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* 商品カードの横流れはクリップ */
+    .goods-slider {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* フッター内の要素も画面幅を超えない */
+    .footer-inner,
+    .footer-nav,
+    .footer-sns {
+        max-width: 100%;
+        min-width: 0;
+    }
+
+}
+
+/* =========================================================
+   FINAL VISUAL RESTORE
+   TOP鳥アニメーションとGOODSカードの見え方を元の状態へ
+========================================================= */
+
+/* TOPの鳥は、共通の img { max-width: 100%; } の影響を受けないようにする */
+.birdanime .bird-body {
+    width: 100px;
+    max-width: none;
+    left: 0;
+    top: 0;
+}
+
+.birdanime .wing-right {
+    width: 57px;
+    max-width: none;
+    top: 4px;
+    right: -7px;
+}
+
+/* GOODSカードの影が途中で切れないようにする */
+.goods-slider {
+    overflow: visible;
+}
+
+/* スマホでもカード下の影を隠さない */
+@media (max-width: 768px) {
+    .goods-slider {
+        overflow: visible;
+    }
+}
+
+
+/* =========================================================
+   GOODS CARD FINAL ALIGNMENT
+   TOPスライダーとgoods.htmlの商品カードを統一
+========================================================= */
+
+.goods-item,
+.product-card {
+    border-radius: 20px;
+}
+
+.goods-item {
+    width: 280px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .12);
+}
+
+.goods-item img,
+.product-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.goods-info,
+.product-info {
+    min-height: 82px;
+    padding: 15px;
+    text-align: center;
+}
+
+.goods-name,
+.product-name {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 6px;
+}
+
+.goods-price,
+.product-price {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+
+    .goods-item {
+        width: 180px;
+    }
+
+    .goods-item img,
+    .product-card img {
+        height: auto;
+        aspect-ratio: 1 / 1.07;
+        object-fit: cover;
+    }
+
+    .goods-info,
+    .product-info {
+        min-height: 78px;
+        padding: 12px 10px;
+    }
+
+    .goods-name,
+    .product-name {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .goods-price,
+    .product-price {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+}
+
+/* =========================================================
+   FINAL FIX 2026-08-27
+   TOP bird position restore + mobile GOODS card size restore
+========================================================= */
+
+/* TOP bird : desktop original positioning */
+.birdanime {
+    width: 88px;
+    height: 88px;
+    top: 25%;
+    right: 7%;
+}
+
+.birdanime .bird-body {
+    width: 100px;
+    max-width: none;
+    left: 0;
+    top: 0;
+}
+
+.birdanime .wing-right {
+    width: 57px;
+    max-width: none;
+    top: 4px;
+    right: -7px;
+}
+
+/* Mobile bird : restore the original mobile proportions/position.
+   Do NOT inherit the desktop 100px / 57px sizes. */
+@media (max-width: 768px) {
+
+    .birdanime {
+        width: 50px;
+        height: 50px;
+        top: 25%;
+        right: 10%;
+    }
+
+    .birdanime .bird-body {
+        width: 65px;
+        max-width: none;
+        left: 0;
+        top: 0;
+    }
+
+    .birdanime .wing-right {
+        width: 35px;
+        max-width: none;
+        top: 4px;
+        right: -8px;
+    }
+
+    /* GOODS slider: make cards easier to see/tap on smartphones */
+    .goods-item {
+        width: 210px;
+    }
+
+    .goods-track {
+        gap: 22px;
+    }
+
+    /* GOODS page: give the two-column cards a little more width */
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .product-info {
+        min-height: 82px;
+        padding: 13px 10px;
+    }
+
+    .product-name {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .product-price {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+}
+
+
+/* =========================================================
+   FINAL GOODS / BUTTON VISUAL TUNING 2026-08-27
+   - index.html の「すべてのグッズを見る」をスマホで適正化
+   - goods.html の商品名・価格をTOP GOODSと完全に統一
+========================================================= */
+
+/* goods.html: TOP GOODS slider と同じ文字色・太さ */
+.product-name,
+.product-price {
+    color: #4a3c31;
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+
+    /* index.html: 「すべてのグッズを見る」ボタン */
+    .goods-btn {
+        gap: 9px;
+        padding: 10px 18px;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .goods-btn .btn-bird {
+        width: 34px;
+    }
+
+    /* goods.html: TOPスライダーと同じ文字設定 */
+    .product-name {
+        font-size: 15px;
+        line-height: 1.6;
+        color: #4a3c31;
+        font-weight: 400;
+    }
+
+    .product-price {
+        font-size: 15px;
+        line-height: 1.5;
+        color: #4a3c31;
+        font-weight: 400;
+    }
+}
